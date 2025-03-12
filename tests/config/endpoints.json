@@ -1,5 +1,5 @@
 {
-    "authToken": {
+    "user": {
         "oauth": "/user/oauth/token"
     },
     "pgr-services": {

@@ -3,24 +3,25 @@ import logging
 import requests, json
 from urllib.parse import urljoin
 from requests.exceptions import RequestException, HTTPError, Timeout, ConnectionError
+from tests.data.payload import ReqInfo
 
-def get_env_data():
-    """Load environment configuration data."""
+def get_env_data(key):
+    """Returns specific key value pair from env_config"""
     with open("tests/config/env_config.json") as f:
         env_config = json.load(f)
-    return env_config
+    return env_config.get(key)
 
-def get_credentials():
-    """Load environment configuration data."""
+def get_credentials(user):
+    """Returns credentials of a specific user"""
     with open("tests/config/credentials.json") as f:
         creds = json.load(f)
-    return creds
+    return creds.get(user)
 
-def get_endpoints():
-    """Load environment configuration data."""
+def get_endpoints(service):
+    """Returns endpoints of particular service"""
     with open("tests/config/endpoints.json") as f:
         endpoints = json.load(f)
-    return endpoints
+    return endpoints.get(service)
 
 def make_request(method, url, headers=None, params=None, payload=None, is_json=True, timeout=10):
     """
@@ -125,10 +126,10 @@ def log_response(response):
 
 def get_auth_token(user):
 
-    url = urljoin(get_env_data()["host"], 
-                  get_endpoints()["authToken"]["oauth"])
+    url = build_url(get_env_data("host"), 
+                  get_endpoints("user")["oauth"])
 
-    cred = get_credentials()[user]
+    cred = get_credentials(user)
 
     body = {
               "username": cred["username"],
@@ -139,8 +140,20 @@ def get_auth_token(user):
               "userType": cred["type"]
             }
     
-    header = get_env_data()["auth_header"]
+    header = get_env_data("auth_header")
 
     response = make_request("POST", url, payload=body, headers=header, is_json=False).json()
 
     return response["access_token"], response["UserRequest"]
+
+def get_reqInfo(user):
+    """Returns request info dict"""
+    response = get_auth_token(user)
+    return ReqInfo.RequestInfo(authToken=response[0], 
+                                userInfo=[1]).model_dump()
+
+def build_url(url: str, endpoint: str) -> str:
+    """Returns URL+ENDPOINT"""
+    base_url = url.rstrip("/") + "/"  # Ensure single trailing slash
+    endpoint = endpoint.lstrip("/")  # Remove leading slash
+    return urljoin(base_url, endpoint)
