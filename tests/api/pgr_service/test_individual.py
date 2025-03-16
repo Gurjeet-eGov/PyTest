@@ -26,7 +26,7 @@ def test_create_api(superuser_token, get_env_data, get_endpoints):
     
     params = { "tenantId": get_env_data["stateCode"]+"."+get_env_data["cityCode"] }
 
-    with open("tests/data/payload/pgr/create.json") as f:
+    with open("tests/data/constants/pgr/create.json") as f:
         service_json = json.load(f)
 
     Service = create.Service.model_validate(service_json)
@@ -39,4 +39,9 @@ def test_create_api(superuser_token, get_env_data, get_endpoints):
                                     params=params, payload=payload_data)
 
     print(response.json())
+    assert response.status_code == 200
+    assert response.json()["status"] == "successful"
+    assert response.json()["ServiceWrappers"][0]["service"]["active"] is True
+
+    return response.json()
 

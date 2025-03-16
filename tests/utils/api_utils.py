@@ -146,8 +146,7 @@ def get_auth_token(user):
     
     header = get_env_data()["auth_header"]
 
-    response = make_request("POST", url, payload=body, headers=header, is_json=False)
-    print(response)
+    response = make_request("POST", url, payload=body, headers=header, is_json=False).json()
 
     return response["access_token"], response["UserRequest"]
 
@@ -155,7 +154,7 @@ def get_reqInfo(user):
     """Returns request info dict"""
     response = get_auth_token(user)
     return ReqInfo.RequestInfo(authToken=response[0], 
-                                userInfo=[1]).model_dump()
+                                userInfo=response[1]).model_dump()
 
 def build_url(url: str, endpoint: str) -> str:
     """Returns URL+ENDPOINT"""

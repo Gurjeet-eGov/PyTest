@@ -1,5 +1,5 @@
 {
-  "host": "https://egov-sandbox.niua.org/",
+  "host": "https://staging.digit.org/",
   "localhost": "http://localhost:8082/",
   "stateCode": "pg",
   "cityCode": "citya",
