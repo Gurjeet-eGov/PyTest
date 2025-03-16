@@ -1,0 +1,35 @@
+{
+    "tenantId": "pg.citya",
+    "serviceCode": "ParkRequiresMaintenance",
+    "priority": "LOW",
+    "description": "Add Details for PGR",
+    "additionalDetail": {},
+    "source": "web",
+    "address": {
+      "landmark": "Near Downing St.",
+      "city": "City A",
+      "district": "City A",
+      "region": "City A",
+      "pincode": "",
+      "locality": {
+        "code": "JLC476",
+        "name": "Main Road Abadpura"
+      },
+      "geoLocation": {}
+    },
+    "citizen": {
+      "name": "Mike",
+      "type": "CITIZEN",
+      "mobileNumber": "9999009999",
+      "emailId": "",
+      "roles": [
+        {
+          "id": null,
+          "name": "Citizen",
+          "code": "CITIZEN",
+          "tenantId": "pg.citya"
+        }
+      ],
+      "tenantId": "pg.citya"
+    }
+  }

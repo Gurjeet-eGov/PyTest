@@ -3,18 +3,18 @@ import pytest
 
 from tests.utils import api_utils
 
-@pytest.fixture
+@pytest.fixture(scope="module")
 def citizen_token():
-    return api_utils.get_auth_token("Citizen")
+    return api_utils.get_reqInfo("Citizen")
 
-@pytest.fixture
+@pytest.fixture(scope="module")
 def alt_citizen_token():
-    return api_utils.get_auth_token("alternateCitizen")
+    return api_utils.get_reqInfo("alternateCitizen")
 
-@pytest.fixture
+@pytest.fixture(scope="module")
 def architect_token():
-    return api_utils.get_auth_token("citizenArchitect")
+    return api_utils.get_reqInfo("citizenArchitect")
 
-@pytest.fixture
+@pytest.fixture(scope="module")
 def superuser_token():
-    return api_utils.get_auth_token("Superuser")
+    return api_utils.get_reqInfo("Superuser")

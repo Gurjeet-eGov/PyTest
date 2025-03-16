@@ -5,21 +5,25 @@ from urllib.parse import urljoin
 from requests.exceptions import RequestException, HTTPError, Timeout, ConnectionError
 from tests.data.payload import ReqInfo
 
-def get_env_data(key):
+ENV_PATH = "tests/config/env_config.json"
+CRED_PATH = "tests/config/credentials.json"
+ENDPOINT_PATH = "tests/config/endpoints.json"
+
+def get_env_data():
     """Returns specific key value pair from env_config"""
-    with open("tests/config/env_config.json") as f:
+    with open(ENV_PATH) as f:
         env_config = json.load(f)
-    return env_config.get(key)
+    return env_config
 
 def get_credentials(user):
     """Returns credentials of a specific user"""
-    with open("tests/config/credentials.json") as f:
+    with open(CRED_PATH) as f:
         creds = json.load(f)
     return creds.get(user)
 
 def get_endpoints(service):
     """Returns endpoints of particular service"""
-    with open("tests/config/endpoints.json") as f:
+    with open(ENDPOINT_PATH) as f:
         endpoints = json.load(f)
     return endpoints.get(service)
 
@@ -63,7 +67,7 @@ def make_request(method, url, headers=None, params=None, payload=None, is_json=T
             return {
                 "error": "Invalid JSON response",
                 "status_code": response.status_code,
-                "content": response.text,
+                "content": response.text
             }
 
     except ConnectionError:
@@ -125,8 +129,8 @@ def log_response(response):
         logging.error(f"Failed to log response: {e}")
 
 def get_auth_token(user):
-
-    url = build_url(get_env_data("host"), 
+    
+    url = build_url(get_env_data()["host"], 
                   get_endpoints("user")["oauth"])
 
     cred = get_credentials(user)
@@ -140,9 +144,10 @@ def get_auth_token(user):
               "userType": cred["type"]
             }
     
-    header = get_env_data("auth_header")
+    header = get_env_data()["auth_header"]
 
-    response = make_request("POST", url, payload=body, headers=header, is_json=False).json()
+    response = make_request("POST", url, payload=body, headers=header, is_json=False)
+    print(response)
 
     return response["access_token"], response["UserRequest"]
 
