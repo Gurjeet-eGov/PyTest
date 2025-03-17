@@ -1,13 +1,13 @@
 # Helper functions for API calls
 import logging
-import requests, json
+import requests, json, pandas
 from urllib.parse import urljoin
 from requests.exceptions import RequestException, HTTPError, Timeout, ConnectionError
-from tests.data.payload import ReqInfo
+from data.payload import ReqInfo
 
-ENV_PATH = "tests/config/env_config.json"
-CRED_PATH = "tests/config/credentials.json"
-ENDPOINT_PATH = "tests/config/endpoints.json"
+ENV_PATH = "config/env_config.json"
+CRED_PATH = "config/credentials.json"
+ENDPOINT_PATH = "config/endpoints.json"
 
 def get_env_data():
     """Returns specific key value pair from env_config"""
@@ -161,3 +161,9 @@ def build_url(url: str, endpoint: str) -> str:
     base_url = url.rstrip("/") + "/"  # Ensure single trailing slash
     endpoint = endpoint.lstrip("/")  # Remove leading slash
     return urljoin(base_url, endpoint)
+
+def get_csv_data(file_path):
+    """Read CSV data"""
+    with open(file_path, 'r') as file:
+        data = pandas.read_csv(file)
+        return data.to_dict(orient='records')

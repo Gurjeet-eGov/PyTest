@@ -1,7 +1,7 @@
 # Common fixtures (e.g., authentication tokens)
 import pytest
 
-from tests.utils import api_utils
+from utils import api_utils
 
 @pytest.fixture(scope="module")
 def citizen_token():

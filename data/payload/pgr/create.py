@@ -4,8 +4,8 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel
 
-from tests.data.payload import ReqInfo
-from tests.data.payload.common import workflow_action, address, citizen_detail
+from data.payload import ReqInfo
+from data.payload.common import workflow_action, address, citizen_detail
 
 # class Locality(BaseModel):
 #     code: str

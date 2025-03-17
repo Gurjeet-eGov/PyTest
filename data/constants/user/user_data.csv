@@ -1,0 +1,4 @@
+username,password,tenantId,type
+8080808000,123456,pg,CITIZEN
+8080808001,123456,pg,CITIZEN
+PGRSU,eGov@123,pg.citya,EMPLOYEE
