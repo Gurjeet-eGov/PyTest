@@ -4,6 +4,7 @@ import json
 ENV_PATH = "config/env_config.json"
 CRED_PATH = "config/credentials.json"
 ENDPOINT_PATH = "config/endpoints.json"
+CREDS_ENV_KEY = "credentials"
 
 @pytest.fixture(scope="session", autouse=True)
 def get_env_data():
@@ -14,14 +15,14 @@ def get_env_data():
 
 @pytest.fixture(scope="session", autouse=True)
 def get_credentials():
-    """Load environment configuration data."""
-    with open(CRED_PATH) as f:
+    """Load credentials data."""
+    with open(ENV_PATH) as f:
         creds = json.load(f)
-    return creds
+    return creds[CREDS_ENV_KEY]
 
 @pytest.fixture(scope="session", autouse=True)
 def get_endpoints():
-    """Load environment configuration data."""
+    """Load endpoints data."""
     with open(ENDPOINT_PATH) as f:
         endpoints = json.load(f)
     return endpoints

@@ -1,7 +1,7 @@
 # PyTest
 
 Run test with generate report 
-    pytest --alluredir=allure-results
+    pytest -s --alluredir=allure-results
     pytest -s --alluredir=reports/allure-results-$(date +%Y%m%d_%H%M%S)
 
 
