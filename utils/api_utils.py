@@ -8,6 +8,7 @@ from data.payload import ReqInfo
 ENV_PATH = "config/env_config.json"
 CRED_PATH = "config/credentials.json"
 ENDPOINT_PATH = "config/endpoints.json"
+CREDS_ENV_KEY = "credentials"
 
 def get_env_data():
     """Returns specific key value pair from env_config"""
@@ -17,9 +18,9 @@ def get_env_data():
 
 def get_credentials(user):
     """Returns credentials of a specific user"""
-    with open(CRED_PATH) as f:
+    with open(ENV_PATH) as f:
         creds = json.load(f)
-    return creds.get(user)
+    return creds[CREDS_ENV_KEY].get(user)
 
 def get_endpoints(service):
     """Returns endpoints of particular service"""
