@@ -7,10 +7,10 @@
         "update": "/pgr-services/v2/request/_update",
         "create": "/pgr-services/v2/request/_create"
     },
-    "user1": {
+    "user": {
         "oauth": "/user/oauth/token"
     },
-    "pgr-services1": {
+    "pgr-services": {
         "search": "/pgr-services/v2/request/_search",
         "update": "/pgr-services/v2/request/_update",
         "create": "/pgr-services/v2/request/_create"
