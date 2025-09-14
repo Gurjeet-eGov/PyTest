@@ -31,9 +31,9 @@ from tests.api.user.user_helper import login
 @allure.story("Valid Login")
 @allure.severity(allure.severity_level.NORMAL)
 @pytest.mark.parametrize("username, password, tenant, type", 
-                         [("8080808000", "123456", "pg", "CITIZEN"),
-                          ("8080808001", "123456", "pg", "CITIZEN"),
-                          ("PGRSU", "eGov@123", "pg.citya", "EMPLOYEE")])
+                         [("{username}", "{password}", "pg", "CITIZEN"),
+                          ("{username}", "{password}", "pg", "CITIZEN"),
+                          ("{username}", "{password}", "pg.citya", "EMPLOYEE")])
 def test_valid_login(username, password, tenant, type):
     
     response = login(username, password, tenant, type)
