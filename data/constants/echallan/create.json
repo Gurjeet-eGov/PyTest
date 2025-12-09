@@ -1,0 +1,20 @@
+{
+  "service": {
+    "tenantId": "pg.cityx",
+    "challanNumber": "CHL-0001",
+    "violationCode": "SPEED",
+    "violationDetails": {
+      "speedRecorded": 85,
+      "limit": 60
+    },
+    "amount": 500.0,
+    "violator": {
+      "name": "John Doe",
+      "mobileNumber": "9999999999"
+    },
+    "vehicle": {
+      "registrationNumber": "AB12CD3456",
+      "vehicleType": "CAR"
+    }
+  }
+}

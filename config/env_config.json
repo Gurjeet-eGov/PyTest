@@ -1,17 +1,9 @@
 {
-  "host": "https://xyz.demo.org/",
+  "host": "https://unified-demo.digit.org/",
   "localhost": "http://localhost:8082/",
-  "stateCode": "xyz",
-  "cityCode": "abc",
+  "stateCode": "pg",
+  "cityCode": "citya",
   "auth_header": {
-    "authorization": "xyz"
-  },
-  "credentials": {
-    "Citizen": {
-      "username": "8888",
-      "password": "xyz",
-      "tenantId": "xyz",
-      "type": "xyz"
-    }
+    "authorization": "Basic ZWdvdi11c2VyLWNsaWVudDo="
   }
 }

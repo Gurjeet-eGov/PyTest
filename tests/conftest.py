@@ -1,10 +1,11 @@
 import pytest
 import json
 
+from utils import api_utils
+
 ENV_PATH = "config/env_config.json"
 CRED_PATH = "config/credentials.json"
 ENDPOINT_PATH = "config/endpoints.json"
-CREDS_ENV_KEY = "credentials"
 
 @pytest.fixture(scope="session", autouse=True)
 def get_env_data():
@@ -16,9 +17,9 @@ def get_env_data():
 @pytest.fixture(scope="session", autouse=True)
 def get_credentials():
     """Load credentials data."""
-    with open(ENV_PATH) as f:
+    with open(CRED_PATH) as f:
         creds = json.load(f)
-    return creds[CREDS_ENV_KEY]
+    return creds
 
 @pytest.fixture(scope="session", autouse=True)
 def get_endpoints():
@@ -26,3 +27,13 @@ def get_endpoints():
     with open(ENDPOINT_PATH) as f:
         endpoints = json.load(f)
     return endpoints
+
+@pytest.fixture(scope="module")
+def get_reqInfo():
+    tokens = {
+        "Superuser": api_utils.get_reqInfo("Superuser"),
+        # "Architect": api_utils.get_reqInfo("citizenArchitect"),
+        # "Citizen": api_utils.get_reqInfo("Citizen"),
+        # "AltCitizen": api_utils.get_reqInfo("alternateCitizen")
+    }
+    return tokens

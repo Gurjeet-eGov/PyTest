@@ -6,5 +6,10 @@
     "search": "/pgr-services/v2/request/_search",
     "update": "/pgr-services/v2/request/_update",
     "create": "/pgr-services/v2/request/_create"
+  },
+  "sw-services": {
+    "search": "/sw-services/swc/_search",
+    "update": "/sw-services/swc/_update",
+    "create": "/sw-services/swc/_create"
   }
 }

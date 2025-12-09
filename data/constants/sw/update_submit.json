@@ -1,0 +1,199 @@
+{
+    "id": "514e7c94-80e2-4909-a370-f4f0865fdcd2",
+    "tenantId": "pg.citya",
+    "propertyId": "PG-PT-2025-09-23-001217",
+    "applicationNo": "SW_AP/1013/2025-26/000086",
+    "applicationStatus": "INITIATED",
+    "status": "Active",
+    "connectionNo": null,
+    "oldConnectionNo": null,
+    "documents": [
+      {
+        "documentType": "OWNER.IDENTITYPROOF.AADHAAR",
+        "fileStoreId": "c8e2a2a6-e60b-4f64-bb19-f7728dfbdc9f",
+        "i18nKey": "OWNER.IDENTITYPROOF.AADHAAR",
+        "status": "ACTIVE"
+      },
+      {
+        "documentType": "OWNER.ADDRESSPROOF.DL",
+        "fileStoreId": "32186ff5-0e1e-44e8-95d4-0e96931364d2",
+        "i18nKey": "OWNER.ADDRESSPROOF.DL",
+        "status": "ACTIVE"
+      },
+      {
+        "documentType": "ELECTRICITY_BILL",
+        "fileStoreId": "95cac93c-815f-430e-92ce-4b64d33ee3f0",
+        "i18nKey": "ELECTRICITY_BILL",
+        "status": "ACTIVE"
+      },
+      {
+        "documentType": "PLUMBER_REPORT_DRAWING",
+        "fileStoreId": "b6188717-6013-4977-b8b3-6eec56ec19fc",
+        "i18nKey": "PLUMBER_REPORT_DRAWING",
+        "status": "ACTIVE"
+      }
+    ],
+    "plumberInfo": null,
+    "roadType": null,
+    "roadCuttingArea": null,
+    "roadCuttingInfo": null,
+    "connectionExecutionDate": null,
+    "connectionCategory": null,
+    "connectionType": "Non Metered",
+    "additionalDetails": {
+      "appCreatedDate": 1764753908584,
+      "detailsProvidedBy": "",
+      "locality": "SUN03",
+      "initialMeterReading": null
+    },
+    "processInstance": {
+      "id": null,
+      "tenantId": null,
+      "businessService": null,
+      "businessId": null,
+      "action": "SUBMIT_APPLICATION",
+      "moduleName": null,
+      "state": null,
+      "comment": null,
+      "documents": null,
+      "assignes": null
+    },
+    "auditDetails": {
+      "createdBy": "5eb46135-2c07-4290-a2b1-c83c661d44bf",
+      "lastModifiedBy": "5eb46135-2c07-4290-a2b1-c83c661d44bf",
+      "createdTime": 1764753908584,
+      "lastModifiedTime": 1764753908584
+    },
+    "connectionHolders": null,
+    "applicationType": "NEW_SEWERAGE_CONNECTION",
+    "dateEffectiveFrom": null,
+    "oldApplication": false,
+    "channel": "CFC_COUNTER",
+    "disconnectionExecutionDate": null,
+    "proposedWaterClosets": 4,
+    "proposedToilets": 4,
+    "noOfWaterClosets": null,
+    "noOfToilets": null,
+    "isDisconnectionTemporary": false,
+    "disconnectionReason": null,
+    "property": {
+      "id": "91eb8ee0-a529-4e7d-bdb6-1313813c4f63",
+      "propertyId": "PG-PT-2025-09-23-001217",
+      "surveyId": null,
+      "linkedProperties": null,
+      "tenantId": "pg.citya",
+      "accountId": "5eb46135-2c07-4290-a2b1-c83c661d44bf",
+      "oldPropertyId": null,
+      "status": "ACTIVE",
+      "address": {
+        "tenantId": "pg.citya",
+        "doorNo": "12",
+        "plotNo": null,
+        "id": "7dfece07-0936-4060-9c19-09c5282ff548",
+        "landmark": null,
+        "city": "Victoria",
+        "district": null,
+        "region": null,
+        "state": null,
+        "country": null,
+        "pincode": null,
+        "buildingName": null,
+        "street": "Some",
+        "locality": {
+          "code": "SUN03",
+          "name": "Maplewood",
+          "label": "Locality",
+          "latitude": null,
+          "longitude": null,
+          "area": "Area1",
+          "children": [],
+          "materializedPath": null
+        },
+        "geoLocation": {
+          "latitude": 0,
+          "longitude": 0
+        },
+        "additionalDetails": null
+      },
+      "acknowldgementNumber": "PG-AC-2025-09-23-001239",
+      "propertyType": "BUILTUP.SHAREDPROPERTY",
+      "ownershipCategory": "INDIVIDUAL.MULTIPLEOWNERS",
+      "owners": [
+        {
+          "id": null,
+          "uuid": "e54dbd23-851a-4f95-a147-e89ab6cde7a8",
+          "userName": "10312cc7-ffa2-44f2-905b-1f002794e335",
+          "password": null,
+          "salutation": null,
+          "name": "Rachel",
+          "gender": "FEMALE",
+          "mobileNumber": "9999001821",
+          "emailId": null,
+          "altContactNumber": null,
+          "pan": null,
+          "aadhaarNumber": null,
+          "permanentAddress": "12,  Some, Maplewood, Victoria, ",
+          "permanentCity": null,
+          "permanentPinCode": null,
+          "correspondenceCity": null,
+          "correspondencePinCode": null,
+          "correspondenceAddress": "12,  Some, Maplewood, Victoria, ",
+          "active": true,
+          "dob": null,
+          "pwdExpiryDate": 1766395387000,
+          "locale": null,
+          "type": "CITIZEN",
+          "signature": null,
+          "accountLocked": false,
+          "roles": [
+            {
+              "id": null,
+              "name": "Citizen",
+              "code": "CITIZEN",
+              "tenantId": "pg"
+            }
+          ],
+          "fatherOrHusbandName": "Sam",
+          "bloodGroup": null,
+          "identificationMark": null,
+          "photo": null,
+          "createdBy": "561",
+          "createdDate": 1758619387000,
+          "lastModifiedBy": "111",
+          "lastModifiedDate": 1763544911000,
+          "tenantId": "pg",
+          "alternatemobilenumber": null,
+          "ownerInfoUuid": "1cebfb39-a135-447d-9f9a-9d10afb33e1b",
+          "isPrimaryOwner": null,
+          "ownerShipPercentage": null,
+          "ownerType": "DEFENSE",
+          "institutionId": null,
+          "status": "ACTIVE",
+          "documents": null,
+          "relationship": "HUSBAND"
+        }
+      ],
+      "institution": null,
+      "creationReason": "CREATE",
+      "usageCategory": "RESIDENTIAL",
+      "noOfFloors": 1,
+      "landArea": 12,
+      "superBuiltUpArea": 11,
+      "source": "MUNICIPAL_RECORDS",
+      "channel": "SYSTEM",
+      "documents": null,
+      "units": [],
+      "additionalDetails": {
+        "isRainwaterHarvesting": false
+      },
+      "auditDetails": {
+        "createdBy": "5eb46135-2c07-4290-a2b1-c83c661d44bf",
+        "lastModifiedBy": "c66a9fa0-c513-4a45-9b6e-07d76efed8c5",
+        "createdTime": 1758619386617,
+        "lastModifiedTime": 1763544911189
+      },
+      "workflow": null,
+      "AlternateUpdated": false,
+      "processInstance": null
+    }
+  }
